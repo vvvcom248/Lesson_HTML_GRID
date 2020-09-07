@@ -1,0 +1,87 @@
+.content {
+  padding: 30px 3%;
+}
+.grid {
+  font-size: 30px;
+  position: relative;
+  margin: 0px 0px 40px 0px;
+}
+.grit__body {
+  display: grid;
+  grid-template: repeat(3,1fr)/repeat(2,1fr);/* columns / rows */
+  /*
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  */
+}
+.grid__item {
+  text-align: center;
+  border: 2px solid #222;
+  padding: 30px;
+}
+/****************************************************
+                       Имена областей
+*****************************************************/
+.grid-wrapper {
+  display: grid;
+  grid-template:
+  [start]"header header header header"80px[row2]/*80-высота*/
+  [row2]"side content content content"300px [row3]/*300-высота*/
+  [row3]"footer footer footer footer"60px[row-end] / 100px 1fr 1fr 1fr;
+  /*
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 80px 300px 60px;
+  grid-template-areas:
+    "header header header header"
+    "side content content content"
+    "footer footer footer footer";
+    */
+}
+.grid-header,
+.grid-side,
+.grid-content,
+.grid-footer {
+  padding: 30px;
+  border: 2px solid #666;
+  margin: 0px 0px 15px 0px;
+}
+.grid-header {
+  grid-area: header;
+}
+.grid-side {
+  grid-area: side;
+}
+.grid-content {
+  grid-area: content;
+}
+.grid-footer {
+  grid-area: footer;
+}
+                 /*новая сетка*/
+.grid-auto{
+  display: grid;
+  grid-template: 1fr 1fr / repeat(3,1fr);/*3-число столбцов*/
+  grid-auto-rows: 200px;/*тут задаем высоту третьей строки и 7-сектора*/
+}
+.grid-auto__item{
+  text-align: center;
+  border: 2px solid #222;
+  padding: 30px;
+  font-size: 30px;
+
+}
+                 /*Автоматическое размещение*/
+.grid-masonry {
+  display: grid;
+  grid-template-columns: repeat(3,230px);
+  grid-auto-rows: 230px;
+  grid-auto-flow:row;
+  counter-reset: item;
+}
+.grid-masonry__item {
+  
+}
+.grid-masonry__item img {
+  
+  
+}
